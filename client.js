@@ -112,7 +112,6 @@ export class PersistentReactiveDict extends ReactiveDict {
     }
     inc(key, a = 1, persist, auth) {
         var val = parseInt(super.get.call(this, key));
-        console.log(`inc(${key},${a}) ${val}+${a}=${val+a}`)
         this.set(key, val + parseInt(a), persist, auth);
     }
     dec(key, a = 1, persist, auth) {

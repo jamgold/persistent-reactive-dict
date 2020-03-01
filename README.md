@@ -4,11 +4,7 @@ Make Meteor's `ReactiveDict` object persist its values locally and across page
 refreshes. Meteor's default implementation loses values whenever the page is
 refreshed.
 
-Uses [amplifyjs's store](http://amplifyjs.com/api/store/) library to save
-values in the browsers `localStorage`, falling back to other solutions if it's
-not available.
-
-This is a pure javascript clone of [Robert Lowe](https://github.com/robertlowe)
+This is a pure javascript clone of [Robert Lowe's Meteor module](https://github.com/RobertLowe/persistent-reactive-dict). It uses a local copy of [amplifyjs's store](http://amplifyjs.com/api/store/) library to save values in the browsers `localStorage`, falling back to other solutions if it's not available, thus it no longer has the dependencies introduced by the mdg:amplify@1.0.0 package.
 
 Installation
 ============
@@ -103,10 +99,10 @@ These work the same as the current Meteor implementation:
 Additions
 ---------
 
-The following additional methods exist for numeric values
+The following additional methods exist for numeric values. The amount is optional, the default is 1
 
-* `mySession.inc(key, value)`
-* `mySession.dec(key, value)`
+* `mySession.inc(key [, amount])`
+* `mySession.dec(key [, amount])`
 
 
 Options
